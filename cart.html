@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - WishLink - Online Shopping in India</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
+    <meta name="description" content="View your shopping cart at WishLink. Manage your items and proceed to secure checkout.">
+    <meta name="keywords" content="WishLink, cart, shopping cart, online shopping, India">
+</head>
+<body>
+    <!-- Enhanced Navbar -->
+    <nav class="navbar">
+        <div class="nav-main">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="assets/images/logo.svg" alt="WishLink" class="logo-img">
+                    <h1>WishLink</h1>
+                </div>
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search for products, brands, categories...">
+                    <button type="button" id="search-btn" class="search-btn">
+                        <span>🔍</span>
+                    </button>
+                </div>
+                <div class="nav-actions">
+                    <a href="wishlist.html" class="nav-action" id="wishlist-link">
+                        <span class="action-icon">❤️</span>
+                        <span class="action-text">Wishlist</span>
+                        <span class="action-count" id="wishlist-count">0</span>
+                    </a>
+                    <a href="cart.html" class="nav-action active">
+                        <span class="action-icon">🛒</span>
+                        <span class="action-text">Cart</span>
+                        <span class="action-count" id="cart-count">0</span>
+                    </a>
+                    <a href="auth.html" class="nav-action" id="auth-link">
+                        <span class="action-icon">👤</span>
+                        <span class="action-text">Sign In</span>
+                    </a>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+        <div class="nav-categories">
+            <div class="nav-container">
+                <button class="category-toggle" id="category-toggle">
+                    <span>☰</span>
+                    <span>All Categories</span>
+                </button>
+                <ul class="category-menu" id="category-menu">
+                    <li><a href="categories.html?category=men">Men's Fashion</a></li>
+                    <li><a href="categories.html?category=women">Women's Fashion</a></li>
+                    <li><a href="categories.html?category=unisex">Unisex</a></li>
+                    <li><a href="categories.html?category=children">Children</a></li>
+                    <li><a href="categories.html?category=electronics">Electronics</a></li>
+                    <li><a href="categories.html?category=home">Home & Living</a></li>
+                    <li><a href="categories.html?category=sports">Sports & Fitness</a></li>
+                </ul>
+                <div class="nav-offers">
+                    <span>🎉 Free Shipping on orders above ₹500!</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Shopping Cart</h1>
+            <p>Review and manage your selected items</p>
+        </div>
+    </section>
+
+    <!-- Cart Content -->
+    <section class="cart-section">
+        <div class="container">
+            <div class="cart-container">
+                <div class="cart-items">
+                    <h2>Your Items</h2>
+                    <div id="cart-items-container">
+                        <!-- Cart items will be dynamically loaded here -->
+                    </div>
+                    <div class="empty-cart" id="empty-cart" style="display: none;">
+                        <div class="empty-cart-content">
+                            <h3>Your cart is empty</h3>
+                            <p>Looks like you haven't added any items yet.</p>
+                            <a href="categories.html" class="btn btn-primary">Continue Shopping</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-summary">
+                    <h2>Order Summary</h2>
+                    <div class="summary-item">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">₹0.00</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Shipping:</span>
+                        <span id="shipping">₹0.00</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Tax:</span>
+                        <span id="tax">₹0.00</span>
+                    </div>
+                    <div class="summary-divider"></div>
+                    <div class="summary-item total">
+                        <span>Total:</span>
+                        <span id="total">₹0.00</span>
+                    </div>
+                    <button class="btn btn-primary checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+                    <a href="categories.html" class="btn btn-outline continue-shopping-btn">Continue Shopping</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About WishLink</h3>
+                    <p>Your trusted online shopping destination for quality products at great prices.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>📧 shubhamjadhao5249@gmail.com</p>
+                    <p>📞 8381029262</p>
+                    <p>📍 123 Shopping St, mumbai City, CC 12345</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <form id="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                    <div class="social-icons">
+                        <a href="#">📘</a>
+                        <a href="#">🐦</a>
+                        <a href="#">📷</a>
+                        <a href="#">📌</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 WishLink. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

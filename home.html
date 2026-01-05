@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WishLink - Online Shopping in India</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
+    <meta name="description" content="WishLink - Best online shopping platform in India. Fashion, electronics, home products and more at great prices.">
+    <meta name="keywords" content="WishLink, online shopping, India, fashion, electronics, home products">
+    <meta name="author" content="WishLink">
+</head>
+<body>
+    <!-- Enhanced Navbar -->
+    <nav class="navbar">
+        <div class="nav-main">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="assets/images/logo.svg" alt="WishLink" class="logo-img">
+                    <h1>WishLink</h1>
+                </div>
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search for products, brands, categories...">
+                    <button type="button" id="search-btn" class="search-btn">
+                        <span>🔍</span>
+                    </button>
+                </div>
+                <div class="nav-actions">
+                    <a href="auth.html" class="nav-action" id="auth-link">
+                        <span class="action-icon">👤</span>
+                        <span class="action-text">Sign In</span>
+                    </a>
+                    <a href="wishlist.html" class="nav-action" id="wishlist-link">
+                        <span class="action-icon">❤️</span>
+                        <span class="action-text">Wishlist</span>
+                        <span class="action-count" id="wishlist-count">0</span>
+                    </a>
+                    <a href="cart.html" class="nav-action">
+                        <span class="action-icon">🛒</span>
+                        <span class="action-text">Cart</span>
+                        <span class="action-count" id="cart-count">0</span>
+                    </a>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+        <div class="nav-categories">
+            <div class="nav-container">
+                <button class="category-toggle" id="category-toggle">
+                    <span>☰</span>
+                    <span>All Categories</span>
+                </button>
+                <ul class="category-menu" id="category-menu">
+                    <li><a href="categories.html?category=men">Men's Fashion</a></li>
+                    <li><a href="categories.html?category=women">Women's Fashion</a></li>
+                    <li><a href="categories.html?category=unisex">Unisex</a></li>
+                    <li><a href="categories.html?category=children">Children</a></li>
+                    <li><a href="categories.html?category=electronics">Electronics</a></li>
+                    <li><a href="categories.html?category=home">Home & Living</a></li>
+                    <li><a href="categories.html?category=sports">Sports & Fitness</a></li>
+                </ul>
+                <div class="nav-offers">
+                    <span>🎉 Free Shipping on orders above ₹500!</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Enhanced Hero Section with Slider -->
+    <section class="hero">
+        <div class="hero-slider" id="hero-slider">
+            <div class="hero-slide active">
+                <div class="hero-container">
+                    <div class="hero-content hero-content-right">
+                        <h1 class="hero-title">Winter Sale 2026</h1>
+                        <p class="hero-slogan">Up to 50% off on selected items</p>
+                        <div class="hero-offers">
+                            <p>🎉 Limited Time Offer</p>
+                            <p>🚚 Free shipping on orders above ₹500</p>
+                        </div>
+                        <div class="hero-buttons">
+                            <a href="categories.html" class="btn btn-primary">Shop Now</a>
+                            <a href="#deals" class="btn btn-secondary">View Deals</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-container">
+                    <div class="hero-content hero-content-left">
+                        <h1 class="hero-title">New Arrivals</h1>
+                        <p class="hero-slogan">Check out the latest trends</p>
+                        <div class="hero-offers">
+                            <p>✨ Fresh collection</p>
+                            <p>🎁 Exclusive designs</p>
+                        </div>
+                        <div class="hero-buttons">
+                            <a href="categories.html?filter=new" class="btn btn-primary">Explore</a>
+                            <a href="#new-arrivals" class="btn btn-secondary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-container">
+                    <div class="hero-content hero-content-right">
+                        <h1 class="hero-title">Premium Quality</h1>
+                        <p class="hero-slogan">Experience the best products</p>
+                        <div class="hero-offers">
+                            <p>⭐ Top rated items</p>
+                            <p>💎 Premium materials</p>
+                        </div>
+                        <div class="hero-buttons">
+                            <a href="categories.html?filter=premium" class="btn btn-primary">Shop Premium</a>
+                            <a href="#testimonials" class="btn btn-secondary">Reviews</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="slider-btn prev" id="slider-prev">‹</button>
+            <button class="slider-btn next" id="slider-next">›</button>
+            <div class="slider-dots" id="slider-dots"></div>
+        </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section class="new-arrivals" id="new-arrivals">
+        <div class="container">
+            <h2 class="section-title">✨ New Arrivals</h2>
+            <div class="products-grid" id="new-arrivals-grid">
+                <!-- New arrival products will be dynamically loaded here -->
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination" id="new-arrivals-pagination">
+                <div class="pagination-info">
+                    <span>Showing <span class="current-page">1</span>-<span class="items-per-page">8</span> of <span class="total-items">24</span> products</span>
+                </div>
+                <div class="pagination-controls">
+                    <button class="pagination-btn prev-btn" disabled>
+                        <span>‹</span>
+                        Previous
+                    </button>
+                    <div class="pagination-numbers">
+                        <button class="pagination-number active" data-page="1">1</button>
+                        <button class="pagination-number" data-page="2">2</button>
+                        <button class="pagination-number" data-page="3">3</button>
+                        <span class="pagination-dots">...</span>
+                        <button class="pagination-number" data-page="6">6</button>
+                    </div>
+                    <button class="pagination-btn next-btn">
+                        Next
+                        <span>›</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="section-footer">
+                <a href="categories.html?filter=new" class="btn btn-outline">View All New Arrivals</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Indian Customers Say</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"Amazing shopping experience! Great products, fast delivery, and excellent customer service. WishLink is now my go-to online store."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://picsum.photos/seed/priya-sharma/50/50.jpg" alt="Priya">
+                            </div>
+                            <div class="author-info">
+                                <h4>Priya Sharma</h4>
+                                <p>Verified Buyer • Mumbai</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"The quality of products exceeded my expectations. The return process is so easy, and customer support team is very helpful."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://picsum.photos/seed/rahul-verma/50/50.jpg" alt="Rahul">
+                            </div>
+                            <div class="author-info">
+                                <h4>Rahul Verma</h4>
+                                <p>Regular Customer • Delhi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"I love the variety of products available. The prices are competitive and delivery is always on time. Highly recommended!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://picsum.photos/seed/ananya-iyer/50/50.jpg" alt="Ananya">
+                            </div>
+                            <div class="author-info">
+                                <h4>Ananya Iyer</h4>
+                                <p>Premium Member • Bangalore</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"Shopping on WishLink is so easy. Best platform for Indian customers. Cash on delivery option is really great."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://picsum.photos/seed/rajesh-patel/50/50.jpg" alt="Rajesh">
+                            </div>
+                            <div class="author-info">
+                                <h4>Rajesh Patel</h4>
+                                <p>Regular Shopper • Ahmedabad</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"WishLink is the best for fashionable clothes and good quality. Got delivery in just 2 days even from Kolkata."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://picsum.photos/seed/sneha-roy/50/50.jpg" alt="Sneha">
+                            </div>
+                            <div class="author-info">
+                                <h4>Sneha Roy</h4>
+                                <p>Fashion Lover • Kolkata</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"Premium quality products and reasonable prices. Shopping experience from Chennai was amazing. Packaging was also very good."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://picsum.photos/seed/karthik-nair/50/50.jpg" alt="Karthik">
+                            </div>
+                            <div class="author-info">
+                                <h4>Karthik Nair</h4>
+                                <p>Tech Enthusiast • Chennai</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2>🎁 Get Exclusive Deals</h2>
+                    <p>Subscribe to our newsletter and be the first to know about new arrivals, special offers, and much more!</p>
+                </div>
+                <form class="newsletter-form" id="main-newsletter-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </div>
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
+                            <span class="checkmark"></span>
+                            I agree to receive marketing emails
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About WishLink</h3>
+                    <p>Your trusted online shopping destination for quality products at great prices.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>📧 shubhamjadhao5249@gmail.com</p>
+                    <p>📞 8381029262</p>
+                    <p>📍 123 Shopping St, Mumbai City, CC 12345</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <form id="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                    <div class="social-icons">
+                        <a href="#">📘</a>
+                        <a href="#">🐦</a>
+                        <a href="#">📷</a>
+                        <a href="#">📌</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 WishLink. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

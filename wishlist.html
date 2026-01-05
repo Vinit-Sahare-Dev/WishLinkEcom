@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wishlist - WishLink</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Enhanced Navbar -->
+    <nav class="navbar">
+        <div class="nav-main">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="assets/images/logo.svg" alt="WishLink" class="logo-img">
+                    <h1>WishLink</h1>
+                </div>
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search for products, brands, categories...">
+                    <button type="button" id="search-btn" class="search-btn">
+                        <span>🔍</span>
+                    </button>
+                </div>
+                <div class="nav-actions">
+                    <a href="wishlist.html" class="nav-action active" id="wishlist-link">
+                        <span class="action-icon">❤️</span>
+                        <span class="action-text">Wishlist</span>
+                        <span class="action-count" id="wishlist-count">0</span>
+                    </a>
+                    <a href="cart.html" class="nav-action">
+                        <span class="action-icon">🛒</span>
+                        <span class="action-text">Cart</span>
+                        <span class="action-count" id="cart-count">0</span>
+                    </a>
+                    <a href="auth.html" class="nav-action" id="auth-link">
+                        <span class="action-icon">👤</span>
+                        <span class="action-text">Sign In</span>
+                    </a>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+        <div class="nav-categories">
+            <div class="nav-container">
+                <button class="category-toggle" id="category-toggle">
+                    <span>☰</span>
+                    <span>All Categories</span>
+                </button>
+                <ul class="category-menu" id="category-menu">
+                    <li><a href="categories.html?category=men">Men's Fashion</a></li>
+                    <li><a href="categories.html?category=women">Women's Fashion</a></li>
+                    <li><a href="categories.html?category=unisex">Unisex</a></li>
+                    <li><a href="categories.html?category=children">Children</a></li>
+                    <li><a href="categories.html?category=electronics">Electronics</a></li>
+                    <li><a href="categories.html?category=home">Home & Living</a></li>
+                    <li><a href="categories.html?category=sports">Sports & Fitness</a></li>
+                </ul>
+                <div class="nav-offers">
+                    <span>🎉 Free Shipping on orders above ₹500!</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>My Wishlist</h1>
+            <p>Save your favorite items for later</p>
+        </div>
+    </section>
+
+    <!-- Wishlist Content -->
+    <section class="wishlist-section">
+        <div class="container">
+            <div class="wishlist-container">
+                <div class="wishlist-items">
+                    <div class="wishlist-header">
+                        <h2>Your Saved Items</h2>
+                        <div class="wishlist-actions">
+                            <button class="btn btn-outline" id="clear-wishlist-btn">Clear All</button>
+                            <button class="btn btn-primary" id="add-all-to-cart-btn">Add All to Cart</button>
+                        </div>
+                    </div>
+                    <div id="wishlist-items-container">
+                        <!-- Wishlist items will be dynamically loaded here -->
+                    </div>
+                    <div class="empty-wishlist" id="empty-wishlist" style="display: none;">
+                        <div class="empty-wishlist-content">
+                            <div class="empty-icon">💔</div>
+                            <h3>Your wishlist is empty</h3>
+                            <p>Start adding items you love to see them here</p>
+                            <a href="categories.html" class="btn btn-primary">Continue Shopping</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wishlist-sidebar">
+                    <div class="wishlist-summary">
+                        <h3>Wishlist Summary</h3>
+                        <div class="summary-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Total Items:</span>
+                                <span class="stat-value" id="total-items">0</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Total Value:</span>
+                                <span class="stat-value" id="total-value">$0.00</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Average Price:</span>
+                                <span class="stat-value" id="avg-price">$0.00</span>
+                            </div>
+                        </div>
+                        <div class="price-alert">
+                            <h4>💰 Price Drop Alert</h4>
+                            <p>Get notified when items in your wishlist go on sale</p>
+                            <button class="btn btn-outline" id="set-alert-btn">Set Alert</button>
+                        </div>
+                    </div>
+
+                    <div class="recommendations">
+                        <h3>You Might Also Like</h3>
+                        <div class="recommendation-grid" id="recommendation-grid">
+                            <!-- Recommendations will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About WishLink</h3>
+                    <p>Your trusted online shopping destination for quality products at great prices.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>📧 shubhamjadhao5249@gmail.com</p>
+                    <p>📞 8381029262</p>
+                    <p>📍 123 Shopping St, mumbai City, CC 12345</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <form id="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                    <div class="social-icons">
+                        <a href="#">📘</a>
+                        <a href="#">🐦</a>
+                        <a href="#">📷</a>
+                        <a href="#">📌</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 WishLink. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/wishlist.js"></script>
+</body>
+</html>

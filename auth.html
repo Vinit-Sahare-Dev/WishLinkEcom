@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In / Sign Up - WishLink</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Enhanced Navbar -->
+    <nav class="navbar">
+        <div class="nav-main">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="assets/images/logo.svg" alt="WishLink" class="logo-img">
+                    <h1>WishLink</h1>
+                </div>
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search for products, brands, categories...">
+                    <button type="button" id="search-btn" class="search-btn">
+                        <span>🔍</span>
+                    </button>
+                </div>
+                <div class="nav-actions">
+                    <a href="wishlist.html" class="nav-action" id="wishlist-link">
+                        <span class="action-icon">❤️</span>
+                        <span class="action-text">Wishlist</span>
+                        <span class="action-count" id="wishlist-count">0</span>
+                    </a>
+                    <a href="cart.html" class="nav-action">
+                        <span class="action-icon">🛒</span>
+                        <span class="action-text">Cart</span>
+                        <span class="action-count" id="cart-count">0</span>
+                    </a>
+                    <a href="auth.html" class="nav-action active">
+                        <span class="action-icon">👤</span>
+                        <span class="action-text">Sign In</span>
+                    </a>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+        <div class="nav-categories">
+            <div class="nav-container">
+                <button class="category-toggle" id="category-toggle">
+                    <span>☰</span>
+                    <span>All Categories</span>
+                </button>
+                <ul class="category-menu" id="category-menu">
+                    <li><a href="categories.html?category=men">Men's Fashion</a></li>
+                    <li><a href="categories.html?category=women">Women's Fashion</a></li>
+                    <li><a href="categories.html?category=unisex">Unisex</a></li>
+                    <li><a href="categories.html?category=children">Children</a></li>
+                    <li><a href="categories.html?category=electronics">Electronics</a></li>
+                    <li><a href="categories.html?category=home">Home & Living</a></li>
+                    <li><a href="categories.html?category=sports">Sports & Fitness</a></li>
+                </ul>
+                <div class="nav-offers">
+                    <span>🎉 Free Shipping on orders above $50!</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Auth Section -->
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-forms">
+                    <!-- Sign In Form -->
+                    <div class="auth-form" id="signin-form">
+                        <div class="auth-header">
+                            <h2>Welcome Back</h2>
+                            <p>Sign in to your WishLink account</p>
+                        </div>
+                        
+                        <form id="signin-form-element">
+                            <div class="form-group">
+                                <label for="signin-email">Email Address</label>
+                                <input type="email" id="signin-email" name="email" placeholder="Enter your email" required>
+                                <span class="error-message" id="signin-email-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="signin-password">Password</label>
+                                <div class="password-input">
+                                    <input type="password" id="signin-password" name="password" placeholder="Enter your password" required>
+                                    <button type="button" class="toggle-password" data-target="signin-password">
+                                        <span class="eye-icon">👁️</span>
+                                    </button>
+                                </div>
+                                <span class="error-message" id="signin-password-error"></span>
+                            </div>
+                            
+                            <div class="form-options">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="remember-me">
+                                    <span class="checkmark"></span>
+                                    Remember me
+                                </label>
+                                <a href="#" class="forgot-password-link" id="forgot-password-link">Forgot password?</a>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary auth-btn dynamic-hover">Sign In</button>
+                            
+                            <div class="auth-divider">
+                                <span>OR</span>
+                            </div>
+                            
+                            <div class="social-auth">
+                                <button type="button" class="btn btn-social google-btn dynamic-hover">
+                                    <span class="social-icon">📧</span>
+                                    Sign in with Google
+                                </button>
+                                <button type="button" class="btn btn-social facebook-btn dynamic-hover">
+                                    <span class="social-icon">📘</span>
+                                    Sign in with Facebook
+                                </button>
+                            </div>
+                            
+                            <div class="auth-switch">
+                                <p>Don't have an account? <a href="#" id="show-signup">Sign up</a></p>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Sign Up Form -->
+                    <div class="auth-form" id="signup-form" style="display: none;">
+                        <div class="auth-header">
+                            <h2>Create Account</h2>
+                            <p>Join WishLink and start shopping</p>
+                        </div>
+                        
+                        <form id="signup-form-element">
+                            <div class="form-group">
+                                <label for="signup-name">Full Name</label>
+                                <input type="text" id="signup-name" name="name" placeholder="Enter your full name" required>
+                                <span class="error-message" id="signup-name-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="signup-email">Email Address</label>
+                                <input type="email" id="signup-email" name="email" placeholder="Enter your email" required>
+                                <span class="error-message" id="signup-email-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="signup-password">Password</label>
+                                <div class="password-input">
+                                    <input type="password" id="signup-password" name="password" placeholder="Create a password" required>
+                                    <button type="button" class="toggle-password" data-target="signup-password">
+                                        <span class="eye-icon">👁️</span>
+                                    </button>
+                                </div>
+                                <span class="error-message" id="signup-password-error"></span>
+                                <div class="password-requirements">
+                                    <p>Password must:</p>
+                                    <ul>
+                                        <li id="req-length">Be at least 8 characters</li>
+                                        <li id="req-uppercase">Contain one uppercase letter</li>
+                                        <li id="req-lowercase">Contain one lowercase letter</li>
+                                        <li id="req-number">Contain one number</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="signup-confirm-password">Confirm Password</label>
+                                <div class="password-input">
+                                    <input type="password" id="signup-confirm-password" name="confirmPassword" placeholder="Confirm your password" required>
+                                    <button type="button" class="toggle-password" data-target="signup-confirm-password">
+                                        <span class="eye-icon">👁️</span>
+                                    </button>
+                                </div>
+                                <span class="error-message" id="signup-confirm-password-error"></span>
+                            </div>
+                            
+                            <div class="form-options">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="agree-terms" required>
+                                    <span class="checkmark"></span>
+                                    I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary auth-btn dynamic-hover">Create Account</button>
+                            
+                            <div class="auth-switch">
+                                <p>Already have an account? <a href="#" id="show-signin">Sign in</a></p>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Forgot Password Form -->
+                    <div class="auth-form" id="forgot-password-form" style="display: none;">
+                        <div class="auth-header">
+                            <h2>Reset Password</h2>
+                            <p>Enter your email to receive password reset instructions</p>
+                        </div>
+                        
+                        <form id="forgot-password-form-element">
+                            <div class="form-group">
+                                <label for="reset-email">Email Address</label>
+                                <input type="email" id="reset-email" name="email" placeholder="Enter your email" required>
+                                <span class="error-message" id="reset-email-error"></span>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary auth-btn dynamic-hover">Send Reset Link</button>
+                            
+                            <div class="auth-switch">
+                                <p>Remember your password? <a href="#" id="back-to-signin">Sign in</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="auth-benefits">
+                <h3>Why Join WishLink?</h3>
+                <div class="benefits-list">
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🚚</span>
+                        <div class="benefit-content">
+                            <h4>Free Shipping</h4>
+                            <p>On orders above ₹50</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">💰</span>
+                        <div class="benefit-content">
+                            <h4>Exclusive Deals</h4>
+                            <p>Member-only discounts</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">⚡</span>
+                        <div class="benefit-content">
+                            <h4>Fast Checkout</h4>
+                            <p>Save your preferences</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🎁</span>
+                        <div class="benefit-content">
+                            <h4>Rewards Program</h4>
+                            <p>Earn points with every purchase</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About WishLink</h3>
+                    <p>Your trusted online shopping destination for quality products at great prices.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>📧 shubhamjadhao5249@gmail.com</p>
+                    <p>📞 8381029262</p>
+                    <p>📍 123 Shopping St, mumbai City, CC 12345</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <form id="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                    <div class="social-icons">
+                        <a href="#">📘</a>
+                        <a href="#">🐦</a>
+                        <a href="#">📷</a>
+                        <a href="#">📌</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 WishLink. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

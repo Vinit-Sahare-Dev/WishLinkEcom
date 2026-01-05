@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - WishLink</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Enhanced Navbar -->
+    <nav class="navbar">
+        <div class="nav-main">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="assets/images/logo.svg" alt="WishLink" class="logo-img">
+                    <h1>WishLink</h1>
+                </div>
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search for products, brands, categories...">
+                    <button type="button" id="search-btn" class="search-btn">
+                        <span>🔍</span>
+                    </button>
+                </div>
+                <div class="nav-actions">
+                    <a href="wishlist.html" class="nav-action" id="wishlist-link">
+                        <span class="action-icon">❤️</span>
+                        <span class="action-text">Wishlist</span>
+                        <span class="action-count" id="wishlist-count">0</span>
+                    </a>
+                    <a href="cart.html" class="nav-action">
+                        <span class="action-icon">🛒</span>
+                        <span class="action-text">Cart</span>
+                        <span class="action-count" id="cart-count">0</span>
+                    </a>
+                    <a href="auth.html" class="nav-action" id="auth-link">
+                        <span class="action-icon">👤</span>
+                        <span class="action-text">Sign In</span>
+                    </a>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+        <div class="nav-categories">
+            <div class="nav-container">
+                <button class="category-toggle" id="category-toggle">
+                    <span>☰</span>
+                    <span>All Categories</span>
+                </button>
+                <ul class="category-menu" id="category-menu">
+                    <li><a href="categories.html?category=men">Men's Fashion</a></li>
+                    <li><a href="categories.html?category=women">Women's Fashion</a></li>
+                    <li><a href="categories.html?category=unisex">Unisex</a></li>
+                    <li><a href="categories.html?category=children">Children</a></li>
+                    <li><a href="categories.html?category=electronics">Electronics</a></li>
+                    <li><a href="categories.html?category=home">Home & Living</a></li>
+                    <li><a href="categories.html?category=sports">Sports & Fitness</a></li>
+                </ul>
+                <div class="nav-offers">
+                    <span>🎉 Free Shipping on orders above ₹500!</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>My Profile</h1>
+            <p>Manage your account and view order history</p>
+        </div>
+    </section>
+
+    <!-- Profile Content -->
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-container">
+                <!-- Profile Information -->
+                <div class="profile-info">
+                    <h2>Personal Information</h2>
+                    <form id="profile-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Shipping Address</label>
+                            <textarea id="address" name="address" placeholder="Enter your complete address" rows="3"></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                            <button type="button" class="btn btn-outline" id="cancel-btn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Order History -->
+                <div class="order-history">
+                    <h2>Order History</h2>
+                    <div class="orders-list" id="orders-list">
+                        <!-- Orders will be dynamically loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About WishLink</h3>
+                    <p>Your trusted online shopping destination for quality products at great prices.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>📧 shubhamjadhao5249@gmail.com</p>
+                    <p>📞 8381029262</p>
+                    <p>📍 123 Shopping St, mumbai City, CC 12345</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <form id="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                    <div class="social-icons">
+                        <a href="#">📘</a>
+                        <a href="#">🐦</a>
+                        <a href="#">📷</a>
+                        <a href="#">📌</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 WishLink. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

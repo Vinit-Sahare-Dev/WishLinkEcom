@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WishLink - Your Wishlist, One Click Away</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Enhanced Navbar -->
+    <nav class="navbar">
+        <div class="nav-main">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="assets/images/logo.svg" alt="WishLink" class="logo-img">
+                    <h1>WishLink</h1>
+                </div>
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search for products, brands, categories...">
+                    <button type="button" id="search-btn" class="search-btn">
+                        <span>🔍</span>
+                    </button>
+                </div>
+                <div class="nav-actions">
+                    <a href="wishlist.html" class="nav-action" id="wishlist-link">
+                        <span class="action-icon">❤️</span>
+                        <span class="action-text">Wishlist</span>
+                        <span class="action-count" id="wishlist-count">0</span>
+                    </a>
+                    <a href="cart.html" class="nav-action">
+                        <span class="action-icon">🛒</span>
+                        <span class="action-text">Cart</span>
+                        <span class="action-count" id="cart-count">0</span>
+                    </a>
+                    <a href="auth.html" class="nav-action" id="auth-link">
+                        <span class="action-icon">👤</span>
+                        <span class="action-text">Sign In</span>
+                    </a>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+        <div class="nav-categories">
+            <div class="nav-container">
+                <button class="category-toggle" id="category-toggle">
+                    <span>☰</span>
+                    <span>All Categories</span>
+                </button>
+                <ul class="category-menu" id="category-menu">
+                    <li><a href="categories.html?category=men">Men's Fashion</a></li>
+                    <li><a href="categories.html?category=women">Women's Fashion</a></li>
+                    <li><a href="categories.html?category=unisex">Unisex</a></li>
+                    <li><a href="categories.html?category=children">Children</a></li>
+                    <li><a href="categories.html?category=electronics">Electronics</a></li>
+                    <li><a href="categories.html?category=home">Home & Living</a></li>
+                    <li><a href="categories.html?category=sports">Sports & Fitness</a></li>
+                </ul>
+                <div class="nav-offers">
+                    <span>🎉 Free Shipping on orders above ₹500!</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Enhanced Hero Section with Slider -->
+    <section class="hero">
+        <div class="hero-slider" id="hero-slider">
+            <div class="hero-slide active">
+                <div class="hero-container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Winter Sale 2026</h1>
+                        <p class="hero-slogan">Up to 50% off on selected items</p>
+                        <div class="hero-offers">
+                            <p>🎉 Limited Time Offer</p>
+                            <p>🚚 Free shipping on orders above ₹500</p>
+                        </div>
+                        <div class="hero-buttons">
+                            <a href="categories.html" class="btn btn-primary">Shop Now</a>
+                            <a href="#deals" class="btn btn-secondary">View Deals</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">New Arrivals</h1>
+                        <p class="hero-slogan">Check out the latest trends</p>
+                        <div class="hero-offers">
+                            <p>✨ Fresh collection</p>
+                            <p>🎁 Exclusive designs</p>
+                        </div>
+                        <div class="hero-buttons">
+                            <a href="categories.html?filter=new" class="btn btn-primary">Explore</a>
+                            <a href="#new-arrivals" class="btn btn-secondary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Premium Quality</h1>
+                        <p class="hero-slogan">Experience the best products</p>
+                        <div class="hero-offers">
+                            <p>⭐ Top rated items</p>
+                            <p>💎 Premium materials</p>
+                        </div>
+                        <div class="hero-buttons">
+                            <a href="categories.html?filter=premium" class="btn btn-primary">Shop Premium</a>
+                            <a href="#testimonials" class="btn btn-secondary">Reviews</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="slider-btn prev" id="slider-prev">‹</button>
+            <button class="slider-btn next" id="slider-next">›</button>
+            <div class="slider-dots" id="slider-dots"></div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="featured-categories">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">👔</div>
+                    <h3>Men's Fashion</h3>
+                    <p>Trendy clothes for modern men</p>
+                    <a href="categories.html?category=men" class="btn btn-outline">Shop Now</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">👗</div>
+                    <h3>Women's Fashion</h3>
+                    <p>Stylish outfits for every occasion</p>
+                    <a href="categories.html?category=women" class="btn btn-outline">Shop Now</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">👕</div>
+                    <h3>Unisex</h3>
+                    <p>Versatile styles for everyone</p>
+                    <a href="categories.html?category=unisex" class="btn btn-outline">Shop Now</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">👶</div>
+                    <h3>Children</h3>
+                    <p>Comfortable & cute kids wear</p>
+                    <a href="categories.html?category=children" class="btn btn-outline">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offers & Deals Section -->
+    <section class="deals-section" id="deals">
+        <div class="container">
+            <h2 class="section-title">🔥 Hot Deals & Offers</h2>
+            <div class="deals-grid">
+                <div class="deal-card">
+                    <div class="deal-badge">-50%</div>
+                    <div class="deal-image">
+                        <img src="https://picsum.photos/seed/deal1/300/200.jpg" alt="Flash Sale">
+                    </div>
+                    <div class="deal-content">
+                        <h3>Flash Sale</h3>
+                        <p>Limited time offers on selected items</p>
+                        <div class="deal-timer">
+                            <span>Ends in: </span>
+                            <div class="timer" id="flash-timer">
+                                <span class="time-unit">23h</span>
+                                <span class="time-unit">45m</span>
+                                <span class="time-unit">30s</span>
+                            </div>
+                        </div>
+                        <a href="categories.html?filter=flash" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+                <div class="deal-card">
+                    <div class="deal-badge">-30%</div>
+                    <div class="deal-image">
+                        <img src="https://picsum.photos/seed/deal2/300/200.jpg" alt="Seasonal Sale">
+                    </div>
+                    <div class="deal-content">
+                        <h3>Seasonal Sale</h3>
+                        <p>Summer collection at amazing prices</p>
+                        <div class="deal-timer">
+                            <span>Valid until: </span>
+                            <span class="deal-date">January 31, 2026</span>
+                        </div>
+                        <a href="categories.html?filter=seasonal" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+                <div class="deal-card">
+                    <div class="deal-badge">BOGO</div>
+                    <div class="deal-image">
+                        <img src="https://picsum.photos/seed/deal3/300/200.jpg" alt="Buy One Get One">
+                    </div>
+                    <div class="deal-content">
+                        <h3>Buy One Get One</h3>
+                        <p>Selected items - buy one get one free</p>
+                        <div class="deal-timer">
+                            <span>While stocks last!</span>
+                        </div>
+                        <a href="categories.html?filter=bogo" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section class="new-arrivals" id="new-arrivals">
+        <div class="container">
+            <h2 class="section-title">✨ New Arrivals</h2>
+            <div class="products-grid" id="new-arrivals-grid">
+                <!-- New arrival products will be dynamically loaded here -->
+            </div>
+            <div class="section-footer">
+                <a href="categories.html?filter=new" class="btn btn-outline">View All New Arrivals</a>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Customer Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"Amazing shopping experience! Great products, fast delivery, and excellent customer service. WishLink is now my go-to online store."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://picsum.photos/seed/user1/50/50.jpg" alt="Sarah">
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>Verified Buyer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"The quality of products exceeded my expectations. The return process is so easy, and the customer support team is very helpful."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://picsum.photos/seed/user2/50/50.jpg" alt="Mike">
+                            </div>
+                            <div class="author-info">
+                                <h4>Mike Chen</h4>
+                                <p>Regular Customer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"I love the variety of products available. The prices are competitive and the delivery is always on time. Highly recommended!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://picsum.photos/seed/user3/50/50.jpg" alt="Emma">
+                            </div>
+                            <div class="author-info">
+                                <h4>Emma Wilson</h4>
+                                <p>Premium Member</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2>🎁 Get Exclusive Deals</h2>
+                    <p>Subscribe to our newsletter and be the first to know about new arrivals, special offers, and much more!</p>
+                </div>
+                <form class="newsletter-form" id="main-newsletter-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </div>
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
+                            <span class="checkmark"></span>
+                            I agree to receive marketing emails
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About WishLink</h3>
+                    <p>Your trusted online shopping destination for quality products at great prices.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>📧 shubhamjadhao5249@gmail.com</p>
+                    <p>📞 8381029262</p>
+                    <p>📍 123 Shopping St, mumbai City, CC 12345</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <form id="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                    <div class="social-icons">
+                        <a href="#">📘</a>
+                        <a href="#">🐦</a>
+                        <a href="#">📷</a>
+                        <a href="#">📌</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 WishLink. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

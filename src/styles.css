@@ -1,0 +1,24 @@
+/* ... existing styles ... */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+/* Previously 16:9; switch to 4:5 */
+.grid-item {
+  /* ... other styles ... */
+  /* aspect-ratio: 16 / 9; */ /* replace this */
+  aspect-ratio: 4 / 5; /* enforce 4:5 portrait */
+  overflow: hidden;
+  border-radius: 8px; /* optional */
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fill without distortion */
+}
+
+/* ... existing styles ... */
